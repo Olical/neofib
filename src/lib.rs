@@ -1,9 +1,11 @@
 extern crate neovim_lib as neovim;
 
+mod fib;
+
 use std::sync::mpsc;
 
 pub fn start() {
-    let mut session = neovim::Session::new_parent().unwrap();
+    let mut session = neovim::Session::new_parent().expect("failed to create session");
 
     let (sender, receiver) = mpsc::channel();
 
@@ -33,7 +35,10 @@ impl Handler {
 impl neovim::Handler for Handler {
     fn handle_notify(&mut self, name: &str, _args: Vec<neovim::Value>) {
         match name {
-            "quit" => self.sender.send(Event::Quit).unwrap(),
+            "quit" => self
+                .sender
+                .send(Event::Quit)
+                .expect("failed to send quit message"),
             _ => {}
         }
     }
@@ -45,8 +50,8 @@ impl neovim::Handler for Handler {
     ) -> Result<neovim::Value, neovim::Value> {
         match name {
             "nth" => {
-                let n = args[0].as_u64().unwrap();
-                Ok(neovim::Value::from(n * 2))
+                let n = args[0].as_u64().expect("failed to parse n for nth");
+                Ok(neovim::Value::from(fib::nth(n)))
             }
             _ => Err(neovim::Value::from("unknown request")),
         }

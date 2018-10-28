@@ -4,7 +4,7 @@ An example Neovim plugin written in Rust using [neovim-lib][]. I learnt a lot fr
 
 > Disclaimer: I am extremely new to Rust and essentially learning it so I can write a Neovim -> Rust -> Clojure socket / pREPL tool.
 
-All it does is generate the nth Fibonacci number when you execute `:call neofib#nth(10)`, for example. You can install it with any package manager you like, you'll just need to make sure the binary is built before running it. I use this [vim-plug][] line:
+All it does is generate the nth Fibonacci number when you execute `:echo neofib#nth(10)`, for example. You can install it with any package manager you like, you'll just need to make sure the binary is built before running it. I use this [vim-plug][] line:
 
 ```viml
 Plug 'Olical/neofib', { 'do': 'bash install.sh' }

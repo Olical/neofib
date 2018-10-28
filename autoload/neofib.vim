@@ -38,7 +38,7 @@ function! s:ConfigureJob(jobid)
 endfunction
 
 function! s:OnStderr(id, data, event) dict
-  echom 'neofib: stderr: ' . join(a:data, "\n")
+  echom 'neofib: ' . a:id . ' ' . a:event . ' ' . join(a:data, "\n")
 endfunction
 
 function! s:StartJob()
@@ -51,15 +51,15 @@ function! s:StartJob()
 endfunction
 
 function! s:StopJob()
-  if 0 < s:jobid
+  if s:jobid > 0
     augroup neofib
       autocmd!
     augroup END
 
     call rpcnotify(s:jobid, 'quit')
-    let result = jobwait(s:jobid, 500)
+    let result = jobwait([s:jobid], 500)
 
-    if result == -1
+    if result == [-1]
       call jobstop(s:jobid)
     endif
 
