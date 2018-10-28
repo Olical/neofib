@@ -11,12 +11,12 @@ name=neofib
 
 try_curl() {
     command -v curl > /dev/null && \
-        curl --fail --location "$1" --output bin/$name
+        curl --fail --location "$1" --output target/release/$name
 }
 
 try_wget() {
     command -v wget > /dev/null && \
-        wget --output-document=bin/$name "$1"
+        wget --output-document=target/release/$name "$1"
 }
 
 download() {
