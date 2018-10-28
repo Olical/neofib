@@ -1,3 +1,5 @@
+extern crate neofib;
+
 fn main() {
-    println!("Hello, world!");
+    neofib::start("6666");
 }
