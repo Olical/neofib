@@ -24,6 +24,6 @@ Do what you want. Learn as much as you can. Unlicense more software.
 
 [unlicense]: http://unlicense.org/
 [neovim-lib]: https://github.com/daa84/neovim-lib
-[sorched-earth]: https://github.com/boxofrox/neovim-scorched-earth
+[scorched-earth]: https://github.com/boxofrox/neovim-scorched-earth
 [vim-plug]: https://github.com/junegunn/vim-plug
 [LanguageClient-neovim]: https://github.com/autozimu/LanguageClient-neovim
