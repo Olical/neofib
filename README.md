@@ -1,14 +1,16 @@
 # neofib
 
-An example Neovim plugin written in Rust using [daa88/neovim-lib][]. I learnt a lot from [boxofrox/neovim-scorched-earth][scorched-earth].
+An example Neovim plugin written in Rust using [neovim-lib][]. I learnt a lot from [scorched-earth][], the install script is adapted from [LanguageClient-neovim][].
 
 > Disclaimer: I am extremely new to Rust and essentially learning it so I can write a Neovim -> Rust -> Clojure socket / pREPL tool.
 
-All it does is generate the nth Fibonacci number when you execute `:Fib 10`, for example. You can install it with any package manager you like, you'll just need to make sure the binary is built before running it. I use this [vim-plug][] line:
+All it does is generate the nth Fibonacci number when you execute `:call neofib#nth(10)`, for example. You can install it with any package manager you like, you'll just need to make sure the binary is built before running it. I use this [vim-plug][] line:
 
 ```viml
 Plug 'Olical/neofib', { 'do': 'bash install.sh' }
 ```
+
+This entire repository is pretty much copied and adapted code in an attempt to learn from all of these wonderful original authors I have linked to. I hope this collation can help others learn too!
 
 ## Unlicenced
 
@@ -24,3 +26,4 @@ Do what you want. Learn as much as you can. Unlicense more software.
 [neovim-lib]: https://github.com/daa84/neovim-lib
 [sorched-earth]: https://github.com/boxofrox/neovim-scorched-earth
 [vim-plug]: https://github.com/junegunn/vim-plug
+[LanguageClient-neovim]: https://github.com/autozimu/LanguageClient-neovim
